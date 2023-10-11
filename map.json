@@ -31,17 +31,8 @@
                 ],
                 "name": "Cause of Death"
             }
-        },
-        {
-            "name": "zoom_level",
-            "value": 30000,
-            "bind": {
-                "input": "range",
-                "min": 3500,
-                "max": 6000000,
-                "step": 100,
-                "name": "Zoom: "
-            }
+        }
+        
         }
     ],
     "projection": {
