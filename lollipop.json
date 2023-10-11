@@ -1,0 +1,75 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1200,
+    "height": 200,
+    "description": "year",
+    "config": {
+        "background": "transparent"
+    },
+    "view": {
+        "stroke": null,
+        "fill": null
+    },
+    "data": {
+        "url": "Global Missing Migrants Dataset.csv"
+    },
+    "encoding": {
+        "x": {
+            "field": "Incident year",
+            "type": "nominal",
+            "axis": {
+                "labelAngle": 0 
+            }
+        },
+        "y": {
+            "title": "Total Number of Dead and Missing",
+            "field": "Total Number of Dead and Missing",
+            "type": "quantitative",
+            "axis":null,
+            "aggregate": "sum"
+        },
+        "color": {
+            "value": "#990000"
+        }
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "circle",
+                "size": 150
+        }},
+        
+            {    
+"mark": {
+    "type": "bar",
+    "width": {
+        "band": 0.02
+    }
+},
+"encoding": {
+                    "detail": {
+                        "field": "Total Number of Dead and Missing",
+                        "type": "quantitative",
+                        "aggregate": "sum"
+                    }}},
+        
+        {
+            "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline": "middle",
+                "dy": -15
+            },
+            "encoding": {
+                "text": {
+                    "field": "Total Number of Dead and Missing",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "value": "black"
+                }
+            }
+        }
+    ]
+}

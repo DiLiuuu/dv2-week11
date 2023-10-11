@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+    integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Missing Migrants</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.12.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.1"></script>
+
+    <style>
+        .centered-heading {
+            text-align: center;
+        }
+
+        /* 自定义工具提示样式 */
+        .vg-tooltip.visible.light-theme {
+            max-width: 400px !important;
+            /* 设置工具提示的最大宽度 */
+            /* 其他样式属性 */
+            white-space: normal
+        }
+
+        #vg-tooltip-element table {
+            padding-left: 20px;
+            padding-right: 20px
+        }
+
+        #vg-tooltip-element table tr td.key {
+            width: 300px;
+        }
+         .title-container {
+            background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px; /* 调整您需要的高度 */
+            margin-top: 50px; /* 调整顶部间距 */
+            margin-bottom: 50px; /* 调整底部间距 */
+        }
+
+        .title-container h1,
+        .title-container h3 {
+            color: white; /* 设置文本颜色为白色 */
+        }
+    </style>
+</head>
+
+
+<body style="background-color: whitesmoke;">
+    <!-- Vega-Lite 图表容器 -->
+
+    <div class="pure-g" style="background-color: black;">
+        <div class="pure-u-1 pure-u-md-1/8"></div>
+        <div class="pure-u-1 pure-u-md-5/8">
+            <div class="centered-heading" style="margin-top: 100px; margin-bottom: 50px ">
+                <h1 style="color: lightgrey; font-size: 80px;" >Global Missing Migrants</h1>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1/8">
+                        <div class="centered-heading" style="margin-top: 100px; margin-bottom: 100px ">
+            <h3 style="color: lightgrey;">Understanding Missing Migrants and Their Tragic Journeys</h3>
+                        </div>
+        </div>
+    </div>
+
+
+<div class="pure-g">
+    <div class="pure-u-1 pure-u-md-1/8"></div>
+    <div class="pure-u-1 pure-u-md-5/8">
+        <div class="centered-heading" style="margin-top: 100px; margin-bottom: 100px ">
+            <h2>Deaths and Missings during Migration</h2>
+        </div>
+    </div>
+    <div class="pure-u-1 pure-u-md-1/8"></div>
+</div>
+
+
+    <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-2/8"></div>
+        <center>
+        <div class="pure-u-1 pure-u-md-4/8" id="map" style="margin-left: 50px" ;></div>
+        </center>
+        <div class="pure-u-1 pure-u-md-2/8"></div>
+    </div>
+
+
+<div class="pure-g">
+        <!-- <div class="pure-u-1-5" ></div> -->
+        <div class="pure-u-3-5" id="lollipop" style="margin-top: 100px ; margin-left: 100px;"></div>
+        <div class="pure-u-1-5"></div>
+</div>
+
+
+
+    <div class="pure-g">
+    <div class="centered-heading pure-u-1" style="margin-top: 100px ;">
+            <h2>Cause of Death</h2>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <!-- <div class="pure-u-1-5"></div> -->
+        <div class="pure-u-3-5" id="barchart" style="margin-top: 10px; margin-left: 100px;"></div>
+        <div class="pure-u-1-5"></div>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+        var map_spec = "map.json";
+        var barchart_spec = "barchart.json";
+        var lollipop_spec= "lollipop.json";
+        vegaEmbed('#map', map_spec).then(function (result) { }).catch(console.error);
+        vegaEmbed('#barchart', barchart_spec).then(function (result) { }).catch(console.error);
+        vegaEmbed('#lollipop', lollipop_spec).then(function (result) { }).catch(console.error);
+
+    </script>
+
+</body>
+
+</html>
